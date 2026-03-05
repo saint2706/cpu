@@ -17,6 +17,35 @@ VR16, a basic RISC processor designed and written in verilog. As time permits, t
 # Setup
 On how to run this project in your local machine. 
 
+## Python + virtual environment (required for assembler/compiler)
+- Tested with **Python 3.12** (CI uses 3.12); Python **3.10+** is recommended.
+- Create and activate a virtual environment from the repo root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+> On Windows PowerShell (inside WSL not required):
+>
+> ```powershell
+> python -m venv .venv
+> .\.venv\Scripts\Activate.ps1
+> pip install -r requirements.txt
+> ```
+
+## Tooling split
+- **Assembler/compiler-only usage**: only Python + the venv setup above is required.
+- **RTL simulation prerequisites**: install `iverilog` and `gtkwave` in addition to the Python setup above.
+
+  After installing RTL tools, run:
+
+  ```bash
+  ./compile.sh
+  ./sim.sh
+  ```
+
 ## Windows
 1. Install WSL and install `gtkwave` and `iverilog`.
 2. Setup venv in root directory. 
